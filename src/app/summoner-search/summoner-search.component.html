@@ -1,0 +1,13 @@
+
+<div class="wrapper">
+    <div class="title">
+        <h1>Summoner Stats</h1>
+    </div>
+    <div class="search">
+        <mat-form-field appearance="outline">
+            <mat-label>Summoner Name</mat-label>
+            <input [(ngModel)]="summonerInput"(keyup.enter)="getSummoner()" matInput  placeholder="Enter your summoner name">
+        </mat-form-field>
+        <button mat-button (click)="getSummoner()">search</button>
+    </div>
+</div> 
