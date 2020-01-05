@@ -1,0 +1,7 @@
+<div class="wrapper">
+    <div class="matchHistoryItem" *ngFor="let match of summonerMatches">
+        <div class="Participants" *ngFor="let participant of match.participantIdentities">
+            <p>{{participant.player.summonerName}}</p>
+        </div>
+    </div>
+</div>

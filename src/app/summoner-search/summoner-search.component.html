@@ -1,4 +1,3 @@
-
 <div class="wrapper">
     <div class="title">
         <h1>Summoner Stats</h1>
@@ -6,8 +5,10 @@
     <div class="search">
         <mat-form-field appearance="outline">
             <mat-label>Summoner Name</mat-label>
-            <input [(ngModel)]="summonerInput"(keyup.enter)="getSummoner()" matInput  placeholder="Enter your summoner name">
+            <input matInput (keyup.enter)="getSummoner()" [formControl]="summonerInput" [errorStateMatcher]="matcher" placeholder="Enter your summoner name">
+            <mat-hint *ngIf="summonerInput.hasError('required') && !!summonerInput.touched">Please enter a Summoner Name</mat-hint>
+            <mat-error *ngIf="summonerInput.hasError('incorrect')">Please enter a valid Summoner Name</mat-error>
         </mat-form-field>
         <button mat-button (click)="getSummoner()">search</button>
     </div>
-</div> 
+</div>
