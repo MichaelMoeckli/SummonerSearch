@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { SummonerProfile } from 'server/lib/models/SummonerProfile-model';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { MatchHistory } from 'server/lib/models/Match/MatchHistory.model';
 
 @Component({
   selector: 'app-match-history',
@@ -7,7 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MatchHistoryComponent implements OnInit {
 
-  constructor() { }
+  @Input() matchHistory: Observable<MatchHistory>;
+
+  constructor() {
+    // this.Summ.subscribe(e => {e.name})
+   }
 
   ngOnInit() {
   }

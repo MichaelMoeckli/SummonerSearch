@@ -7,7 +7,8 @@ import { WindowsDefenderGuard } from './guards/windows-defender.guard';
 
 const routes: Routes = [ 
   { path: '', component: SummonerSearchComponent },
-  { path: 'profile', canActivate: [WindowsDefenderGuard], component: SummonerProfileComponent },
+  // { path: 'profile', canActivate: [WindowsDefenderGuard], component: SummonerProfileComponent },
+  {path: 'profile', component: SummonerProfileComponent}
 ];
 
 @NgModule({

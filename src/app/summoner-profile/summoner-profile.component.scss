@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.summonerInformation {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.summonerDescription {
+    display: flex;
+}
+
+.summonerRank {
+    display: flex;
+}
+
+.summonerChampions {
+    display: flex;
+}
+
+.matchHistory {
+    display: flex;
+    flex: 2;
+}

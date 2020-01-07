@@ -1,7 +1,23 @@
 <div class="wrapper">
-    <div class="matchHistoryItem" *ngFor="let match of summonerMatches">
-        <div class="Participants" *ngFor="let participant of match.participantIdentities">
-            <p>{{participant.player.summonerName}}</p>
+    <div class="summonerInformation">
+        <div class="summonerDescription">
+            <app-summoner-description [summonerProfile]="summonerProfile"></app-summoner-description>
+        </div>
+        <div class="summonerRank">
+            <app-summoner-rank></app-summoner-rank>
+        </div>
+        <div class="summonerChampions">
+            <app-champion-mastery></app-champion-mastery>
         </div>
     </div>
+    <div class="matchHistory">
+        <app-match-history [matchHistory]="matchHistory"></app-match-history>
+    </div>
 </div>
+
+
+<!-- <div class="matchHistoryItem" *ngFor="let match of summonerMatches">
+    <div class="Participants" *ngFor="let participant of match.participantIdentities">
+        <p>{{participant.player.summonerName}}</p>
+    </div>
+</div> -->
