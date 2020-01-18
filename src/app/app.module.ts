@@ -10,10 +10,11 @@ import { MatInputModule } from '@angular/material/input';
 import { SummonerSearchComponent } from './summoner-search/summoner-search.component';
 import { SummonerProfileComponent } from './summoner-profile/summoner-profile.component';
 import { SummonerDescriptionComponent } from './summoner-profile/summoner-description/summoner-description.component';
-import { SummonerRankComponent } from './summoner-profile/summoner-rank/summoner-rank.component';
 import { ChampionMasteryComponent } from './summoner-profile/champion-mastery/champion-mastery.component';
 import { MatchHistoryComponent } from './summoner-profile/match-history/match-history.component';
 import { MatchComponent } from './summoner-profile/match-history/match/match.component';
+import { MatChipsModule,MatListModule,MatDividerModule, MatCardModule, MatStepperModule, MatSelectModule, MatProgressSpinnerModule, MatAutocompleteModule, MatSidenavModule, MatButtonToggleModule, MatIconModule, MatProgressBarModule, MatTooltipModule, MatExpansionModule  } from '@angular/material';
+
 
 
 @NgModule({
@@ -22,10 +23,10 @@ import { MatchComponent } from './summoner-profile/match-history/match/match.com
     SummonerSearchComponent,
     SummonerProfileComponent,
     SummonerDescriptionComponent,
-    SummonerRankComponent,
     ChampionMasteryComponent,
     MatchHistoryComponent,
     MatchComponent,
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -35,7 +36,12 @@ import { MatchComponent } from './summoner-profile/match-history/match/match.com
     ReactiveFormsModule,
     HttpClientModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatCardModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

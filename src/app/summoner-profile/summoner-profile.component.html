@@ -1,17 +1,18 @@
 <div class="wrapper">
-    <div class="summonerInformation">
-        <div class="summonerDescription">
-            <app-summoner-description [summonerProfile]="summonerProfile"></app-summoner-description>
+    &nbsp;
+    <div class="content">
+        <div class="summonerInformation">
+            <div class="summonerDescription">
+                <app-summoner-description [summonerProfile]="summonerProfile" [summonerStats]="summonerStats"></app-summoner-description>
+            </div>
+
+            <div class="summonerChampions">
+                <app-champion-mastery></app-champion-mastery>
+            </div>
         </div>
-        <div class="summonerRank">
-            <app-summoner-rank></app-summoner-rank>
+        <div class="matchHistory">
+            <app-match-history [matchHistory]="matchHistory" [summonerProfile]="summonerProfile | async"></app-match-history>
         </div>
-        <div class="summonerChampions">
-            <app-champion-mastery></app-champion-mastery>
-        </div>
-    </div>
-    <div class="matchHistory">
-        <app-match-history [matchHistory]="matchHistory"></app-match-history>
     </div>
 </div>
 

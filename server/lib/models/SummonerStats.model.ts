@@ -1,3 +1,17 @@
 export class SummonerStats {
-    constructor(public queueType: string, public summonerName: string, public hotStreak: boolean, public wins: number, public veteran: boolean, public losses: number, public rank: string, public leagueId: string, public inactive: boolean, public freshBlood: boolean, public tier: string, public summonerId: string, public leaguePoints: number, public miniSeries?: {"wins": number,"losses": number,"target": number,"progress": string}){}
+
+    queueType: string;
+    summonerName: string;
+    hotStreak: boolean;
+    wins: number;
+    veteran: boolean; 
+    losses: number;
+    rank: string;
+    leagueId: string;
+    inactive: boolean;
+    freshBlood: boolean;
+    tier: string;
+    summonerId: string;
+    leaguePoints: number;
+    //miniSeries?: { "wins": number, "losses": number, "target": number, "progress": string }
 }

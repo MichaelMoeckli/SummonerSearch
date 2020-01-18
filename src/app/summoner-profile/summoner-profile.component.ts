@@ -5,6 +5,9 @@ import { MatchHistory } from 'server/lib/models/Match/MatchHistory.model';
 import { SummonerProfile } from 'server/lib/models/SummonerProfile-model';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { SummonerStats } from 'server/lib/models/SummonerStats.model';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Param } from '@nestjs/common';
 
 @Component({
   selector: 'app-summoner-profile',
@@ -15,12 +18,17 @@ export class SummonerProfileComponent implements OnInit {
 
   summonerProfile: Observable<SummonerProfile>;
   matchHistory: Observable<MatchHistory>;
+  summonerStats: Observable<SummonerStats>;
 
-  constructor(public data: DataService, public profileService: ProfileService) { }
+  constructor(public data: DataService, public profileService: ProfileService, public _router: Router, public _routhandler:ActivatedRoute) { }
 
-  async ngOnInit() {
-    this.summonerProfile = this.data.getSummonerName('Beni8409')
-    this.matchHistory = this.data.getSummonerName('Beni8409').pipe(switchMap(summoner => this.data.getMatchHistory(summoner.accountId)));
+  ngOnInit() {
+
+    this._routhandler.params.subscribe(param => {
+      this.summonerProfile = this.data.getSummonerName(param.id)
+      this.matchHistory = this.summonerProfile.pipe(switchMap(summoner => this.data.getMatchHistory(summoner.accountId)));
+      this.summonerStats = this.summonerProfile.pipe(switchMap(summoner => this.data.getSummonerStats(summoner.id)));
+    })
     // this.summonerProfile = await this.data.getSummonerName('Beni8409').toPromise()
     // this.matches = await this.data.getMatchHistory(this.summonerProfile.accountId).toPromise();
     // console.log(this.summonerProfile.name)
@@ -30,7 +38,8 @@ export class SummonerProfileComponent implements OnInit {
     //     this.matches = matches;
     //     // this.profileService.setMatchHistory(matches)
     //   });
-    // })
+    // })  
   }
+  
 
 }

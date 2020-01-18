@@ -1,1 +1,50 @@
-<p>match works!</p>
+
+<mat-expansion-panel class="wrapper">
+    <mat-expansion-panel-header>
+        <mat-panel-title class="titleWrapper">
+             <img class="champion" [src]="championUrl">
+             <div class="gamemode">
+                <p>{{gameMode}}</p>
+            </div>
+
+        </mat-panel-title>
+        <mat-panel-description class="descriptionWrapper">
+            <div class="creation">
+                <p>{{creation}}</p>
+            </div>
+            <mat-chip-list class="chipwinlist">
+                <div class="win" *ngIf="win; else defeat">
+                        <mat-chip color="accent" selected>Win</mat-chip>
+                </div>
+                    <ng-template #defeat><mat-chip color="warn" selected>Defeat</mat-chip></ng-template>
+            </mat-chip-list>
+            <div class="duration">
+                <p>{{duration}} Min</p>
+            </div>   
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div class="participants">
+            <div class="ParticipantsLeft">
+                <b>Blue Team</b>
+                <p *ngFor="let participant of team1">{{participant.player.summonerName}}</p>
+            </div>
+            <div class="ParticipantsRight">
+                <b>Red Team</b>
+                <p *ngFor="let participant of team2">{{participant.player.summonerName}}</p>
+            </div>
+    </div>
+</mat-expansion-panel>
+
+    <!-- <div class="Duration">
+        <p>{{duration}}</p>
+    </div>
+    <div class="Gamemode">
+        <p>{{gameMode}}</p>
+    </div>
+    <div class="Participants" *ngFor="let participant of match.participantIdentities">
+        <p>{{participant.player.summonerName}}</p>
+    </div>
+    <div class="Win">
+        <p>{{win}}</p>
+    </div> -->
+    

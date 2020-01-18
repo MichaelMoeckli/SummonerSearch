@@ -13,16 +13,16 @@ export class WindowsDefenderGuard implements CanActivate, CanActivateChild {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if(! this.profileService.getProfile)
+    if(! this.profileService.SearchIsValid)
       this.router.navigate(['']);
-    return this.profileService.profile ? true : false;
+    return this.profileService.SearchIsValid ? true : false;
   }
   canActivateChild(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if(! this.profileService.getProfile)
+    if(! this.profileService.SearchIsValid)
       this.router.navigate(['']);
-    return this.profileService.profile ? true : false;
+    return this.profileService.SearchIsValid ? true : false;
   }
 
 }

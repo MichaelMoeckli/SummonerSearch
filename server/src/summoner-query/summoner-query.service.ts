@@ -14,7 +14,8 @@ export class SummonerQueryService {
     public summonerStatsAPI = 'https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner';
     public matchInfoAPI = 'https://euw1.api.riotgames.com/lol/match/v4/matches';
     public matchHistoryAPI = 'https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account';
-    private APIKey = 'RGAPI-80ef464b-690e-4942-ad77-100a2db44ff0'
+    private APIKey = 'RGAPI-ca388c00-327b-4b1f-8a27-e78f701bc30e'
+    private APIKey2 = 'RGAPI-e7298766-b06c-47f6-8c6d-f3ee5bc967e8'
 
     constructor(private http: HttpService) {  }
 
@@ -30,13 +31,14 @@ export class SummonerQueryService {
     }
 
     getSummonerStats(id: string) {
-        return this.http.get<SummonerStats>(`${this.summonerStatsAPI}/${id}`, {
+        return this.http.get<SummonerStats | boolean>(`${this.summonerStatsAPI}/${id}`, {
             headers: {
               'X-Riot-Token': this.APIKey
             }
         }).pipe(
             catchError(_ => {throw new NotFoundException}),
-            map(res => res.data[0])
+            map(res => res.data),
+            map(res => {if (res == false)return null; return res[0]})
         );
     }
 
@@ -62,7 +64,7 @@ export class SummonerQueryService {
     getMatchInfo(matchID: number) {
         return this.http.get<MatchInfo>(`${this.matchInfoAPI}/${matchID}`, {
             headers: {
-              'X-Riot-Token': this.APIKey
+              'X-Riot-Token': this.APIKey2
             }
         }).pipe(
           catchError(_ => {throw new NotFoundException}),  

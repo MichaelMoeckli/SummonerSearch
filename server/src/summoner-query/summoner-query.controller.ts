@@ -25,4 +25,5 @@ export class SummonerQueryController {
     GetMatchByID(@Param('matchID')matchID: number) {
         return this.queryService.getMatchInfo(matchID);
     }
+
 }

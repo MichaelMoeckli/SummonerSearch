@@ -1,13 +1,19 @@
 .wrapper {
+    background-image: url("/assets/data/background/bg1.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.content {
     display: flex;
-    justify-content: space-evenly;
 }
 
 .summonerInformation {
     display: flex;
     flex: 1;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: column;    
 }
 
 .summonerDescription {
@@ -25,4 +31,5 @@
 .matchHistory {
     display: flex;
     flex: 2;
+    margin-top: 10px;
 }

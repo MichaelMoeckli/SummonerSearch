@@ -3,4 +3,16 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 100%;
+}
+
+.search{
+    align-items: center;
+    display: flex;
+}
+.form{
+    width: 500px;
+}
+.disclaimer{
+    font-size: 12px;
 }

@@ -1,14 +1,20 @@
 <div class="wrapper">
-    <div class="title">
-        <h1>Summoner Stats</h1>
+    <div class="SummonerSearch">    
+        <div class="title">
+            <h1>Summoner Stats</h1>
+        </div>
+        <div class="search">
+            <mat-form-field class="form">
+                <mat-label>Summoner Name</mat-label>
+                <input matInput (keyup.enter)="getSummoner()" [formControl]="summonerInput" [errorStateMatcher]="matcher" placeholder="Enter your summoner name">
+                <mat-hint *ngIf="summonerInput.hasError('required') && !!summonerInput.touched">Please enter a Summoner Name</mat-hint>
+                <mat-error *ngIf="summonerInput.hasError('incorrect')">Please enter a valid Summoner Name</mat-error>
+            </mat-form-field>
+        </div>
     </div>
-    <div class="search">
-        <mat-form-field appearance="outline">
-            <mat-label>Summoner Name</mat-label>
-            <input matInput (keyup.enter)="getSummoner()" [formControl]="summonerInput" [errorStateMatcher]="matcher" placeholder="Enter your summoner name">
-            <mat-hint *ngIf="summonerInput.hasError('required') && !!summonerInput.touched">Please enter a Summoner Name</mat-hint>
-            <mat-error *ngIf="summonerInput.hasError('incorrect')">Please enter a valid Summoner Name</mat-error>
-        </mat-form-field>
-        <button mat-button (click)="getSummoner()">search</button>
-    </div>
+    <mat-hint class="disclaimer">
+        Sadly we're limited by the rate limit of the developer api key provided by Riot Games.<br>
+        Therefor we cannot process over 400 requests (rounds up to three username searches) per two minutes.<br>
+        Thank you for understanding.
+    </mat-hint>
 </div>

@@ -3,6 +3,9 @@ import { SummonerProfile } from 'server/lib/models/SummonerProfile-model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { MatchHistory } from 'server/lib/models/Match/MatchHistory.model';
+import { gamemode } from './match-history.gamemode.model';
+
+
 
 @Component({
   selector: 'app-match-history',
@@ -12,12 +15,16 @@ import { MatchHistory } from 'server/lib/models/Match/MatchHistory.model';
 export class MatchHistoryComponent implements OnInit {
 
   @Input() matchHistory: Observable<MatchHistory>;
+  @Input() summonerProfile: SummonerProfile;
+  
 
   constructor() {
     // this.Summ.subscribe(e => {e.name})
    }
 
-  ngOnInit() {
-  }
+   ngOnInit(){
+
+   }
+
 
 }

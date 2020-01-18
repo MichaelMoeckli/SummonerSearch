@@ -15,5 +15,5 @@ export interface MatchInfo {
     gameTypeboolean
     teams: Array<Team>
     participants: Array<Participant>
-        participantIdentities: Array<ParticipantIdentity>
+    participantIdentities: Array<ParticipantIdentity>
 }

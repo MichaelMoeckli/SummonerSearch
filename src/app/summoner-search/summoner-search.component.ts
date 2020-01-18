@@ -17,7 +17,7 @@ export class SummonerSearchComponent implements OnInit {
   public summonerInput: FormControl;
   public matcher: FormErrorStateMatcher;
 
-  constructor(public data:DataService, public formControlService: FormControlService, public profileService: ProfileService, public router: Router) {  }
+  constructor(public data:DataService, public formControlService: FormControlService, public router: Router, public profile: ProfileService) {  }
 
   ngOnInit() {
     this.summonerInput = this.formControlService.createRequired();
@@ -27,9 +27,9 @@ export class SummonerSearchComponent implements OnInit {
   getSummoner(){
     this.data.getSummonerName(this.summonerInput.value).subscribe((res: SummonerProfile) => {
       if(res != null) {
+        this.profile.SearchIsValid = true;
         this.summonerInput.setErrors(null);
-        this.profileService.setProfile(res);
-        this.router.navigate(['profile']);
+        this.router.navigate([`/profile/${this.summonerInput.value}`]);
       } else {
         this.summonerInput.setErrors({'incorrect': true});
       }

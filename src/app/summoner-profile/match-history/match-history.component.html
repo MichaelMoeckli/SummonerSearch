@@ -1,5 +1,6 @@
+<h2>Recent Games</h2>
 <div class="matchHistoryItem" *ngFor="let match of matchHistory | async">
-    <div class="Participants" *ngFor="let participant of match.participantIdentities">
-        <p>{{participant.player.summonerName}}</p>
-    </div>
+        <app-match [match]="match" [summonerProfile]="summonerProfile"></app-match>
 </div>
+
+
