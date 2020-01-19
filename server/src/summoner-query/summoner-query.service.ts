@@ -14,8 +14,8 @@ export class SummonerQueryService {
     public summonerStatsAPI = 'https://euw1.api.riotgames.com/lol/league/v4/entries/by-summoner';
     public matchInfoAPI = 'https://euw1.api.riotgames.com/lol/match/v4/matches';
     public matchHistoryAPI = 'https://euw1.api.riotgames.com/lol/match/v4/matchlists/by-account';
-    private APIKey = 'RGAPI-ca388c00-327b-4b1f-8a27-e78f701bc30e'
-    private APIKey2 = 'RGAPI-e7298766-b06c-47f6-8c6d-f3ee5bc967e8'
+    private APIKey = 'replace with API key'
+    private APIKey2 = 'replace with API key'
 
     constructor(private http: HttpService) {  }
 
