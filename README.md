@@ -1,7 +1,7 @@
 # Summoner Search  
 ## Produktbeschreibung
 
-Wir werden die Webseite im laufe des Sonntags online stellen => [Summoner Search](https://ss.vaorra.net/)  
+[Summoner Search](https://ss.vaorra.net/)  
 ***API Key lauft alle 24h ab (da Riot unser Projekt noch nicht akzeptiert hat und wir noch mit einem Developer Key arbeiten müssen) und einige Bilder werden nicht korrekt angezeit, da die Webseite auf einem Linuxserver (Case-sensitivity) lauft. (Funktioniert auf Windows korrekt)***
 
 Summoner Search ist ein Tool für League of Legends Spieler. Sie können bei dem Startsuchfeld ihren "Summoner Name" eingeben und es wird für den jeweiligen Summoner die Profilübersicht und die Matchhistory angegeben. 
