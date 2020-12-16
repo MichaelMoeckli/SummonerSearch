@@ -15,7 +15,7 @@ Wir inspirierten uns bei unserer Idee bei Seiten wie [op.gg](euw.op.gg) oder [bl
 
 Wenn Sie nach einem Spieler gesucht haben finden Sie Auf der linken Seite, in der Card, das Profil eines Spielers. Dort wird das Profilbild und der Name des Spielers ausgeben. Zudem finden Sie unterhalb den Ranglistenplatz des Spielers. Es wird  die momentane Stufe ausgeben (wie zum Beispiel Gold oder Platin) und der Rang in der Stufe (wie zum Beispiel IV oder II). Zudem werden noch die zugehörigen LP (Leaguepoints) ausgeben. Diese sagen aus wie man momentan im Rang steht. Die momentante Stufe
 wird unten noch als Bild ausgeben. Im unteren Teil der Card finden Sie noch die Wins, Losses und die Winrate der momentanen Ranglisten Saison. Hier werden nur die Ranglisten Spiele einberechechnet, normale Spiele und andere Spass Modis werden hier ignoriert.  
-Auf der rechten Seite finden Sie die letzten Spiele. Sie sehen welcher Champion gespielt wurde anhand des Bildes. Zudem sieht man, welcher Modus gespielt wurde, vor wievielen Stunden das Spiel abgeschlossen wurde, die Länge des Spieles und man sieht ob das spiel gewonnen wurde oder verloren. Wenn Sie die Box ausklappen sehen Sie welche Spieler im jeweiligen Spiel mit dem gesuchten Spieler dabei waren. Die beiden Teams werden gegenüber aufgelistet. 
+Auf der rechten Seite finden Sie die letzten Spiele. Sie sehen welcher Champion gespielt wurde anhand des Bildes. Zudem sieht man, welcher Modus gespielt wurde, vor wievielen Stunden das Spiel abgeschlossen wurde, die Länge des Spieles und man sieht ob das spiel gewonnen wurde oder verloren. Wenn Sie die Box ausklappen sehen Sie welche Spieler im jeweiligen Spiel mit dem gesuchten Spieler dabei waren. Die beiden Teams werden gegenüber aufgelistet.  
 
 ## Backend services
 
